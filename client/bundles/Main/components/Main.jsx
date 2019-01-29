@@ -1,17 +1,33 @@
-import PropTypes from "prop-types";
 import React from "react";
-
+import AllSessions from "./AllSessions";
 export default class Main extends React.Component {
-	static propTypes = {
-		name: PropTypes.string.isRequired
-	};
-
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			available_sessions: props.available_sessions,
+			booked_sessions: props.booked_sessions,
+			full_sessions: props.full_sessions
+		};
 	}
 
 	render() {
-		return <h1>Hello World</h1>;
+		return (
+			<div>
+				<div id='available'>
+					<h1>Available sessions</h1>
+					<AllSessions sessionlist={this.state.available_sessions} />
+					<br />
+				</div>
+				<div id='booked'>
+					<h1>Booked sessions</h1>
+					<AllSessions sessionlist={this.state.booked_sessions} />
+					<br />
+				</div>
+				<div id='full'>
+					<h1>Full sessions</h1>
+					<AllSessions sessionlist={this.state.full_sessions} />
+				</div>
+			</div>
+		);
 	}
 }
