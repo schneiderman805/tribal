@@ -8,8 +8,8 @@ const AllSessions = props => {
 		return (
 			<div>
 				<h1>{session.title}</h1>
-				<h4>{new Date(session.start_date).toLocaleString()}</h4>
-				<h4>{new Date(session.end_date).toLocaleString()}</h4>
+				<h4>{new Date(session.start_date).toLocaleString('en-GB', { h12: false })}</h4>
+				<h4>{new Date(session.end_date).toLocaleString('en-GB', { h12: false })}</h4>
 			</div>
 		);
 	});
