@@ -4,7 +4,7 @@ const AllSessions = props => {
 	let sessionlist = props.sessionlist;
 
 	let sessions = sessionlist.map(session => {
-		debugger;
+
 		return (
 			<div>
 				<h1>{session.title}</h1>
@@ -13,7 +13,7 @@ const AllSessions = props => {
 			</div>
 		);
 	});
-	return <h1>{sessions}</h1>;
+	return <div>{sessions}</div>;
 };
 
 export default AllSessions;
