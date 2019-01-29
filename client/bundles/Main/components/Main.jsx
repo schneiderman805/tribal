@@ -8,10 +8,25 @@ export default class Main extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			sessions: [props.sessions]
+		};
+		
 	}
 
 	render() {
-		return <h1>Hello World</h1>;
+		const sessions = this.state.sessions
+		
+		if (sessions.length > 0) {
+			sessions.forEach(session => {
+				debugger
+				return (
+					<h1>
+						{session.title}
+					</h1>
+				)
+			})
+		}
+
 	}
 }

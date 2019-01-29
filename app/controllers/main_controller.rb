@@ -2,6 +2,6 @@ class MainController < ApplicationController
   layout "main"
 
 	def index
-    @main_props = {}
+    @main_props = {sessions: Session.all}
   end
 end
