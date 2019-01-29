@@ -112,6 +112,7 @@ GEM
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
+    libv8 (6.7.288.46.1-x86_64-darwin-18)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -130,6 +131,8 @@ GEM
     mimemagic (0.3.3)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
+    mini_racer (0.2.4)
+      libv8 (>= 6.3)
     minitest (5.11.3)
     msgpack (1.2.6)
     multi_json (1.13.1)
@@ -284,6 +287,7 @@ DEPENDENCIES
   database_cleaner
   factory_bot_rails
   listen (>= 3.0.5, < 3.2)
+  mini_racer
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-rails

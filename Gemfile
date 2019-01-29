@@ -30,3 +30,5 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rb-readline', '~> 0.5.3'
 end
+
+gem 'mini_racer', platforms: :ruby
