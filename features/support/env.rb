@@ -16,3 +16,8 @@ end
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
+World(FactoryBot::Syntax::Methods)
+FactoryBot::SyntaxRunner.class_eval do
+  include ActionDispatch::TestProcess
+end
+
