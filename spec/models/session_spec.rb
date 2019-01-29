@@ -17,5 +17,4 @@ RSpec.describe Session, type: :model do
       expect(create(:session)).to be_valid
     end
   end
-
 end
