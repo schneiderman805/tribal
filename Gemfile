@@ -10,6 +10,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'react_on_rails', '11.1.4'
 
 group :development, :test do
   gem 'factory_bot_rails'
@@ -20,6 +21,8 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
 	gem 'coveralls', require: false
+	gem "selenium-webdriver"
+	gem "chromedriver-helper"
 end
 
 group :development do
@@ -29,3 +32,5 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rb-readline', '~> 0.5.3'
 end
+
+gem 'mini_racer', platforms: :ruby
