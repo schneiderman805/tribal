@@ -12,6 +12,7 @@ gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'react_on_rails', '11.1.4'
 
+
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry-byebug'
@@ -21,6 +22,8 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
 	gem 'coveralls', require: false
+	gem "selenium-webdriver"
+	gem "chromedriver-helper"
 end
 
 group :development do
