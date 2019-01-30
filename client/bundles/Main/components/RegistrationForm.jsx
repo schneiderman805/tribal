@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink, Link } from 'react-router-dom'
 
 export default function RegistrationForm(props) {
 	return (
@@ -44,6 +45,12 @@ export default function RegistrationForm(props) {
 					name="password_confirmation"
 					type="password"
 				/>
+				{/* <NavLink
+					activeStyle={{ fontWeight: "bold" }}
+					to='/'><button name="Submit" type="submit">
+						Submit
+				</button>
+				</NavLink> */}
 				<button name="Submit" type="submit">
 					Submit
 				</button>

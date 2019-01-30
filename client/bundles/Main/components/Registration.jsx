@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import { Redirect, withRouter } from 'react-router-dom'
 import ReactOnRails from 'react-on-rails';
 import RegistrationForm from './RegistrationForm';
 
 const axios = require("axios");
 
 export class Registration extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			user_role: "",
 			first_name: "",
@@ -15,32 +16,41 @@ export class Registration extends Component {
 			password: "",
 			password_confirmation: ""
 		};
-        this.onChange = this.onChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
+		this.onChange = this.onChange.bind(this);
+		this.onSubmit = this.onSubmit.bind(this);
+		this.onSignUp = this.onSignUp.bind(this);
 	}
 
+	onSignUp() {
+		this.props.history.push('/')
+	}
 	onSubmit() {
 		event.preventDefault();
-
+		// let submited = false
+		let self = this.props;
 		const csrfToken = ReactOnRails.authenticityToken();
 		let registrationForm = document.getElementById('Registration-form');
 		const data = new FormData(registrationForm);
 
 		const config = {
 			headers: {
-			  'Content-Type': 'application/x-www-form-urlencoded',
-			//   'Accept': 'application/json',
-			  'X-CSRF-Token': csrfToken
+				'Content-Type': 'application/x-www-form-urlencoded',
+				//   'Accept': 'application/json',
+				'X-CSRF-Token': csrfToken
 			}
-		  };
+		};
+		debugger;
 
-		axios.post("/users",data,config)
-		.then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+		axios.post("/users", data, config)
+			.then(response => {
+				debugger;
+				// this.submited = true;
+				this.props.history.push('/')
+			})
+			.catch(function (error) {
+				console.log(error);
+			})
+
 	}
 
 	onClick(event) {
@@ -80,4 +90,4 @@ export class Registration extends Component {
 	}
 }
 
-export default Registration;
+export default withRouter(Registration);
