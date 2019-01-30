@@ -3,11 +3,11 @@ import {Route, Switch, BrowserRouter} from "react-router-dom";
 import Main from "./Main";
 
 const App = props => {
-	let passdown = props;
+	let sessions = props;
 	return (
 		<BrowserRouter>
 			<Switch>
-				<Route exact path ='/' render={props => <Main {...props} props={passdown} />} />;
+				<Route exact path ='/' render={() => <Main sessions={sessions} />} />;
 			</Switch>
 		</BrowserRouter>
 	);
