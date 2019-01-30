@@ -95,17 +95,80 @@
     
 }
 
+.content {
+    margin-top: 70px;
+}
+
 h1 {
-
     text-align: center
+}
 
+body {
+    background-color: black;
 }
 
 .session {
-    padding: 5px;
+    align-items: center;
+    font-size: 18px;
+    padding: 10px 5px 10px 5px;
     margin: 5px;
-    border: solid;
+    border: 2px solid white;
+    border-radius: 5px;
     display: flex;
     line-height: 100%;
-    
+    float: left;
+    justify-content: center;
+}
+
+.session h1 {
+    font-size: 18px;
+    padding-right: 5px;
+    text-transform: uppercase;
+}
+
+.join {
+    border: 2px solid white;
+    border-radius: 5px;
+    color: #47FC98;
+    padding: 10px;
+    text-transform: uppercase;
+    margin-left: 5px;
+    float: left;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.session_name {
+    color: #1cdbdc;
+}
+
+// header
+
+.header {
+    background-color: rgba(0, 0, 0, .6);
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px 10px 0px;
+}
+
+#logo {
+    width: 50px;
+    margin-right: 10px;
+}
+
+#title {
+    font-size: 40px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#47FC98, #40bffd, #148BFD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

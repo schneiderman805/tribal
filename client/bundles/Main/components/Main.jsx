@@ -15,8 +15,8 @@ export default class Main extends React.Component {
 		return (
 			<div className='main_container'>
 				<div className='header'>
-					<p>logo</p>
-					<p>Tribal</p>
+					<img src="./assets/logo.png" id="logo" alt="logo" />
+					<p id="title">Tribal</p>
 				</div>
 				
 				<div className='content'>
@@ -33,6 +33,7 @@ export default class Main extends React.Component {
 							<AllSessions sessionlist={this.state.booked_sessions} />
 						</div>
 						<br />
+						<button class="join">Join</button>
 					</div>
 					<div id='full'>
 						<h1>Full sessions</h1>
