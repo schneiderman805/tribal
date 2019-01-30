@@ -1,14 +1,13 @@
 import React from "react";
-import {Route, Switch, BrowserRouter} from "react-router-dom";
+import {Route, Switch, BrowserRouter,NavLink} from "react-router-dom";
 import Main from "./Main";
 import Registration from "./Registration";
-import Header from "./Header"
 
 const App = props => {
 	let sessions = props;
 	return (
 		<div>
-			<Header />
+			<NavLink to="/register" >Sign up</NavLink>
 			<BrowserRouter>
 			<Switch>
 				<Route exact path ='/' render={() => <Main sessions={sessions} />} />;

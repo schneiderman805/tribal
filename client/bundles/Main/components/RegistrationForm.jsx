@@ -45,6 +45,7 @@ export default function RegistrationForm(props) {
 					name="password_confirmation"
 					type="password"
 				/>
+				<input type='hidden' value={props.user_role} />
 				{/* <NavLink
 					activeStyle={{ fontWeight: "bold" }}
 					to='/'><button name="Submit" type="submit">
