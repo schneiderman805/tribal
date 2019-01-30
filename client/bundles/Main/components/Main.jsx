@@ -4,9 +4,9 @@ export default class Main extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			available_sessions: props.available_sessions,
-			booked_sessions: props.booked_sessions,
-			full_sessions: props.full_sessions
+			available_sessions: props.props.available_sessions,
+			booked_sessions: props.props.booked_sessions,
+			full_sessions: props.props.full_sessions
 		};
 	}
 
