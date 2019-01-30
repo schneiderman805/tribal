@@ -133,7 +133,7 @@ class Devise::RegistrationsController < DeviseController
 
     def sign_up_params
     #   devise_parameter_sanitizer.sanitize(:sign_up)
-        params.permit(:first_name,:last_name,:email,:password,:password_confirmation)
+        params.permit(:first_name,:last_name,:email,:password,:password_confirmation,:role)
     end
 
     def account_update_params

@@ -1,10 +1,14 @@
 import React from "react";
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link } from "react-router-dom";
 
 export default function RegistrationForm(props) {
 	return (
 		<div>
-			<form id="Registration-form" name="Registration-form" onSubmit={props.onSubmit}>
+			<form
+				id="Registration-form"
+				name="Registration-form"
+				onSubmit={props.onSubmit}
+			>
 				<label htmlFor="First name">First name</label>
 				<input
 					onChange={props.onChange}
@@ -45,17 +49,11 @@ export default function RegistrationForm(props) {
 					name="password_confirmation"
 					type="password"
 				/>
-				<input type='hidden' value={props.user_role} />
-				{/* <NavLink
-					activeStyle={{ fontWeight: "bold" }}
-					to='/'><button name="Submit" type="submit">
-						Submit
-				</button>
-				</NavLink> */}
+				<input style={{display: 'none'}} id="role" name="role" value={props.role} />
 				<button name="Submit" type="submit">
 					Submit
 				</button>
 			</form>
 		</div>
 	);
-} 
+}

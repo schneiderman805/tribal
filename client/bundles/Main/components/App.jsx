@@ -7,7 +7,7 @@ const App = props => {
 	let sessions = props;
 	return (
 		<div>
-			<NavLink to="/register" >Sign up</NavLink>
+			{/* <NavLink to="/register" >Sign up</NavLink> */}
 			<BrowserRouter>
 			<Switch>
 				<Route exact path ='/' render={() => <Main sessions={sessions} />} />;

@@ -9,7 +9,7 @@ export class Registration extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			user_role: "",
+			role: "",
 			first_name: "",
 			last_name: "",
 			email: "",
@@ -42,12 +42,10 @@ export class Registration extends Component {
 				"X-CSRF-Token": csrfToken
 			}
 		};
-		debugger;
 
 		axios
 			.post("/users", data, config)
 			.then(response => {
-				debugger;
 				// this.submited = true;
 				this.props.history.push("/");
 			})
@@ -73,7 +71,7 @@ export class Registration extends Component {
 		console.log(event.target.value)
 		this.setState(prevState => ({
 		roleChoiceStatus: !prevState.roleChoiceStatus,
-		user_role: event.target.value,
+		role: event.target.value,
 		formDisplayStatus: !prevState.roleChoiceStatus
 	}))}
 
@@ -83,14 +81,14 @@ export class Registration extends Component {
 				<div style={this.state.roleChoiceStatus ? {display: 'none'} : {}}>
 					<h1>I am a</h1>
 					<button
-						name="user_role"
+						name="role"
 						value= "0"
 						onClick={this.onRoleClick}
 					>
 						Trainee
 					</button>
 					<button
-						name="user_role"
+						name="role"
 						value="1"
 						onClick={this.onRoleClick}
 					>
@@ -106,7 +104,7 @@ export class Registration extends Component {
 						email={this.state.email}
 						password={this.state.password}
 						password_confirmation={this.state.password_confirmation}
-						user_role={this.state.user_role}
+						role={this.state.role}
 					/>
 				</div>
 			</div>
