@@ -67,32 +67,9 @@
     background-color: black ;
 }
 
-.header {
-    p {
-        @apply text-white ;
-
-    }
-
-}
-
-.content {
-
-}
-
-.footer{
-
-}
-
-#available {
-
-    
-}
-
 .session_wrapper {
-
     display:flex;
     justify-content: center;
-    
 }
 
 .content {
@@ -145,8 +122,6 @@ body {
 .session_name {
     color: #1cdbdc;
 }
-
-// header
 
 .header {
     background-color: rgba(0, 0, 0, .6);
