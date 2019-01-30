@@ -6,10 +6,10 @@ const AllSessions = props => {
 	let sessions = sessionlist.map(session => {
 
 		return (
-			<div id={session.id}>
+			<div id={session.id} className='session'>
 				<h1>{session.title}</h1>
-				<h4>{new Date(session.start_date).toLocaleString('en-GB', { h12: false })}</h4>
-				<h4>{new Date(session.end_date).toLocaleString('en-GB', { h12: false })}</h4>
+				<p>{new Date(session.start_date).toLocaleString('en-GB', { h12: false })}</p>
+				{/* <h4>{new Date(session.end_date).toLocaleString('en-GB', { h12: false })}</h4> */}
 			</div>
 		);
 	});

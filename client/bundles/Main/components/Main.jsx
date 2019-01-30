@@ -13,7 +13,7 @@ export default class Main extends React.Component {
 
 	render() {
 		return (
-			<div className='main_grid'>
+			<div className='main_container'>
 				<div className='header'>
 					<p>logo</p>
 					<p>Tribal</p>
@@ -22,17 +22,23 @@ export default class Main extends React.Component {
 				<div className='content'>
 					<div id='available'>
 						<h1>Available sessions</h1>
-						<AllSessions sessionlist={this.state.available_sessions} />
+						<div className='session_wrapper'>
+							<AllSessions sessionlist={this.state.available_sessions} />
+						</div>
 						<br />
 					</div>
 					<div id='booked'>
 						<h1>Booked sessions</h1>
-						<AllSessions sessionlist={this.state.booked_sessions} />
+						<div className='session_wrapper'>
+							<AllSessions sessionlist={this.state.booked_sessions} />
+						</div>
 						<br />
 					</div>
 					<div id='full'>
 						<h1>Full sessions</h1>
-						<AllSessions sessionlist={this.state.full_sessions} />
+						<div className='session_wrapper'>
+							<AllSessions sessionlist={this.state.full_sessions} />
+						</div>
 					</div>
 				</div>
 

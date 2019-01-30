@@ -62,7 +62,7 @@
  */
 
  
-.main_grid {
+.main_container {
     color: white ;
     background-color: black ;
 }
@@ -81,4 +81,31 @@
 
 .footer{
 
+}
+
+#available {
+
+    
+}
+
+.session_wrapper {
+
+    display:flex;
+    justify-content: center;
+    
+}
+
+h1 {
+
+    text-align: center
+
+}
+
+.session {
+    padding: 5px;
+    margin: 5px;
+    border: solid;
+    display: flex;
+    line-height: 100%;
+    
 }
