@@ -1,7 +1,7 @@
 import React from "react";
 
 const AllSessions = props => {
-	
+
 	let sessionlist = props.sessionlist;
 
 	let sessions = sessionlist.map(session => {
@@ -13,11 +13,11 @@ const AllSessions = props => {
 					<p>{new Date(session.start_date).toLocaleString('en-GB', { h12: false })}</p>
 					{/* <h4>{new Date(session.end_date).toLocaleString('en-GB', { h12: false })}</h4> */}
 				</div>
-				<button class="join">Book</button>
+				<button class="button">join</button>
 			</div>
 		);
 	});
-	return <div>{sessions}</div>;
+	return <div>{sessions}</div>
 };
 
 export default AllSessions;

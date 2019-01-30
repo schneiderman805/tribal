@@ -33,7 +33,6 @@ export default class Main extends React.Component {
 							<AllSessions sessionlist={this.state.booked_sessions} />
 						</div>
 						<br />
-						<button class="join">Join</button>
 					</div>
 					<div id='full'>
 						<h1>Full sessions</h1>
