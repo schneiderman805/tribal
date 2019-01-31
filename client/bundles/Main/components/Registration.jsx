@@ -15,7 +15,8 @@ export class Registration extends Component {
 			password: "",
 			password_confirmation: "",
 			roleChoiceStatus: false,
-			formDisplayStatus: true
+			formDisplayStatus: true,
+			formErrors: ""
 		};
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
@@ -39,7 +40,19 @@ export class Registration extends Component {
 		axios
 			.post("/users", data, config)
 			.then(response => {
-				document.location.href = "/";
+				
+				if (response.data.errors) {
+					let errors = Object.entries(response.data.errors).join('\n').replace(/,/g,' ');
+					this.setState({
+						formErrors: errors
+
+					})
+					
+				}else {
+					document.location.href = "/";
+				}
+				
+				
 			})
 			.catch(function(error) {
 				console.log(error);
@@ -58,35 +71,29 @@ export class Registration extends Component {
 			[event.target.id]: event.target.value
 		});
 	}
-	onRoleClick(){
+	onRoleClick() {
 		event.preventDefault();
 		this.setState(prevState => ({
-		roleChoiceStatus: !prevState.roleChoiceStatus,
-		role: event.target.value,
-		formDisplayStatus: !prevState.roleChoiceStatus
-	}))}
+			roleChoiceStatus: !prevState.roleChoiceStatus,
+			role: event.target.value,
+			formDisplayStatus: !prevState.roleChoiceStatus
+		}));
+	}
 
 	render() {
 		return (
 			<div>
-				<div style={this.state.roleChoiceStatus ? {display: 'none'} : {}}>
+				<div style={this.state.roleChoiceStatus ? { display: "none" } : {}}>
 					<h1>I am a</h1>
-					<button
-						name="role"
-						value= "0"
-						onClick={this.onRoleClick}
-					>
+					<button name="role" value="0" onClick={this.onRoleClick}>
 						Trainee
 					</button>
-					<button
-						name="role"
-						value="1"
-						onClick={this.onRoleClick}
-					>
+					<button name="role" value="1" onClick={this.onRoleClick}>
 						Coach
 					</button>
 				</div>
-				<div style={this.state.roleChoiceStatus ? {} :{display: 'none'}}>
+				<div style={this.state.roleChoiceStatus ? {} : { display: "none" }}>
+					<div style={{ whiteSpace: 'pre-wrap' }}>{this.state.formErrors}</div>
 					<RegistrationForm
 						onSubmit={this.onSubmit}
 						onChange={this.onChange}
