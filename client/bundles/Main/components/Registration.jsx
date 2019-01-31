@@ -80,15 +80,17 @@ export class Registration extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="main_container">
 				<div style={this.state.roleChoiceStatus ? { display: "none" } : {}}>
 					<h1>I am a</h1>
-					<button name="role" value="0" onClick={this.onRoleClick}>
-						Trainee
-					</button>
-					<button name="role" value="1" onClick={this.onRoleClick}>
-						Coach
-					</button>
+					<div className="content wrapper">
+						<button className="button" name="role" value="0" onClick={this.onRoleClick}>
+							Trainee
+						</button>
+						<button className="button" name="role" value="1" onClick={this.onRoleClick}>
+							Coach
+						</button>
+					</div>
 				</div>
 				<div style={this.state.roleChoiceStatus ? {} : { display: "none" }}>
 					<div style={{ whiteSpace: 'pre-wrap' }}>{this.state.formErrors}</div>

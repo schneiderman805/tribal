@@ -28,13 +28,16 @@ export default class Main extends React.Component {
 					<img src="./assets/logo.png" id="logo" alt="logo" />
 					<p id="title">Tribal</p>
 				</div>
-				
+				<div className='wrapper-col content'>
+				</div>
 				<div className='content'>
-				<NavLink to='/register'>
-					Sign up
-				</NavLink>
-				<h1>Hello, {this.state.user ? this.state.user.first_name : 'Stranger'}!</h1>
 					<div id='available'>
+					<div className="wrapper-col">
+						<NavLink className="button m-4" to='/register'>
+							Sign up
+						</NavLink>
+						<h4 className="m-4">Hello, {this.state.user ? this.state.user.first_name : 'Stranger'}!</h4>
+					</div>
 						<h1>Available sessions</h1>
 						<div className='session_wrapper'>
 							<AllSessions sessionlist={this.state.available_sessions} />

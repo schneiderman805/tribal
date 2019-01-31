@@ -64,7 +64,6 @@
 
 .main_container {
     color: white ;
-    background-color: black ;
 }
 
 .session_wrapper {
@@ -116,6 +115,15 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.wrapper-col {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .session_name {
     color: #1cdbdc;
