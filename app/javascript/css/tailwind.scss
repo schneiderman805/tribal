@@ -117,11 +117,7 @@ body {
 }
 
 .wrapper-col {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @apply text-white flex flex-col justify-center items-center
 }
 
 

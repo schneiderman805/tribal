@@ -15,7 +15,6 @@ export class Registration extends Component {
 			password: "",
 			password_confirmation: "",
 			roleChoiceStatus: false,
-			formDisplayStatus: true,
 			formErrors: ""
 		};
 		this.onChange = this.onChange.bind(this);
