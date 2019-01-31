@@ -29,12 +29,9 @@ ActiveRecord::Schema.define(version: 2019_01_31_090257) do
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price_table_id"
-    t.bigint "{:foreign_key=>true}_id"
-    t.bigint "price_tables_id"
-    t.index ["price_tables_id"], name: "index_sessions_on_price_tables_id"
-    t.index ["{:foreign_key=>true}_id"], name: "index_sessions_on_{:foreign_key=>true}_id"
+    t.bigint "price_table_id"
+    t.index ["price_table_id"], name: "index_sessions_on_price_table_id"
   end
 
-  add_foreign_key "sessions", "price_tables", column: "price_tables_id"
+  add_foreign_key "sessions", "price_tables"
 end
