@@ -32,7 +32,6 @@ export class Registration extends Component {
 		const config = {
 			headers: {
 				"Content-Type": "application/x-www-form-urlencoded",
-				//   'Accept': 'application/json',
 				"X-CSRF-Token": csrfToken
 			}
 		};
