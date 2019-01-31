@@ -6,6 +6,6 @@ class MainController < ApplicationController
       user = current_user
     end
     sessions = Session.all
-    @main_props = {available_sessions: sessions.available, booked_sessions: sessions.booked, full_sessions: sessions.full, user: user}
+    @main_props = {availableSessions: sessions.available, bookedSessions: sessions.booked, fullSessions: sessions.full, user: user}
   end
 end
