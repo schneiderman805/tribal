@@ -1,5 +1,6 @@
 import React from "react";
 import AllSessions from "./AllSessions";
+import { NavLink, Link } from 'react-router-dom'
 export default class Main extends React.Component {
 	constructor(props) {
 		super(props);
@@ -23,6 +24,9 @@ export default class Main extends React.Component {
 	render() {
 		return (
 			<div>
+				<NavLink to='/register'>
+					Sign up
+				</NavLink>
 				<h1>Hello, {this.state.user ? this.state.user.first_name : 'Stranger'}!</h1>
 				<div id='available'>
 					<h1>Available sessions</h1>
