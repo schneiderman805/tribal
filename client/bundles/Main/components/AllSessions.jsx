@@ -1,19 +1,22 @@
 import React from "react";
 
 const AllSessions = props => {
+
 	let sessionlist = props.sessionlist;
 
 	let sessions = sessionlist.map(session => {
 
 		return (
-			<div>
-				<h1>{session.title}</h1>
-				<h4>{new Date(session.start_date).toLocaleString('en-GB', { h12: false })}</h4>
-				<h4>{new Date(session.end_date).toLocaleString('en-GB', { h12: false })}</h4>
+			<div class="wrapper">
+				<div id={session.id} className='session'>
+					<h1 class="session_name">{session.title}</h1>
+					<p>{new Date(session.start_date).toLocaleString('en-GB', { h12: false })}</p>
+				</div>
+				<button class="button">join</button>
 			</div>
 		);
 	});
-	return <div>{sessions}</div>;
+	return <div>{sessions}</div>
 };
 
 export default AllSessions;
