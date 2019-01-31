@@ -6,13 +6,24 @@ export default class Main extends React.Component {
 		this.state = {
 			available_sessions: props.sessions.available_sessions,
 			booked_sessions: props.sessions.booked_sessions,
-			full_sessions: props.sessions.full_sessions
+			full_sessions: props.sessions.full_sessions,
+			user: props.sessions.user
 		};
+	}
+
+	componentWillMount() {
+		this.setState({
+			available_sessions: this.props.sessions.available_sessions,
+			booked_sessions: this.props.sessions.booked_sessions,
+			full_sessions: this.props.sessions.full_sessions,
+			user: this.props.sessions.user
+		})
 	}
 
 	render() {
 		return (
 			<div>
+				<h1>Hello, {this.state.user ? this.state.user.first_name : 'Stranger'}!</h1>
 				<div id='available'>
 					<h1>Available sessions</h1>
 					<AllSessions sessionlist={this.state.available_sessions} />
