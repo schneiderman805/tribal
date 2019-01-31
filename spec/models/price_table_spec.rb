@@ -10,6 +10,10 @@ RSpec.describe PriceTable, type: :model do
     it { is_expected.to validate_presence_of :trainees }
     it { is_expected.to validate_presence_of :price_point }
   end
+  
+  describe 'Associations' do
+    it { is_expected.to have_many :sessions }
+  end
 
   describe FactoryBot do
     it 'should have valid Factory' do
