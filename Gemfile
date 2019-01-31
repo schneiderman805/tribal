@@ -11,6 +11,7 @@ gem 'webpacker', '~> 3.5'
 gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'react_on_rails', '11.1.4'
+gem 'devise'
 gem 'tailwindcss', '~> 0.2.0'
 
 group :development, :test do

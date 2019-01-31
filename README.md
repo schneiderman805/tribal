@@ -1,24 +1,20 @@
-# README
+# Tribal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tribal is a social fitness application.
 
-Things you may want to cover:
+# Features included:
+* Visitors can view sessions
+* Visitors can register on the site
 
-* Ruby version
+# Contributors
+(In Alphabetical order)
 
-* System dependencies
+* [Aditya](https://github.com/kianaditya)
+* [Greg](https://github.com/GergKllai1)
+* [Hanna](https://github.com/HannaSwDn)
+* [Johanna](https://github.com/johannaanden)
+* [William](https://github.com/schneiderman805)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Testing Frameworks
+* [Rspec](http://rspec.info/) for unit testing
+* [Cucumber](https://cucumber.io/) for acceptance testing
