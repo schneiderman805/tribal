@@ -61,7 +61,7 @@
  * @import "utilities/skew-transforms";
  */
 
- 
+
 .main_container {
     color: white ;
     background-color: black ;
@@ -144,4 +144,13 @@ body {
     background: -webkit-linear-gradient(#47FC98, #40bffd, #148BFD);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+@screen md {
+    #logo { width: 70px }
+    #title { font-size: 50px }
+    .content { margin-top: 100px }
+    .session h1 { font-size: 32px }
+    .session { font-size: 32px }
+    .button { font-size: 26px }
 }
