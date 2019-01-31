@@ -61,10 +61,9 @@
  * @import "utilities/skew-transforms";
  */
 
- 
+
 .main_container {
     color: white ;
-    background-color: black ;
 }
 
 .session_wrapper {
@@ -116,6 +115,11 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.wrapper-col {
+    @apply text-white flex flex-col justify-center items-center
+}
+
 
 .session_name {
     color: #1cdbdc;
