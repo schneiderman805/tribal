@@ -26,18 +26,18 @@ Feature: User can sign up
     When I click 'Submit'
     Then I should see "email can't be blank"
     And I should see "password can't be blank"
-    And I should see "First name can't be blank"
-    And I should see "last_name can't be blank"
+    And I should see "first name can't be blank"
+    And I should see "last name can't be blank"
 
   Scenario: When password and password_confirmation doesn't match I get error message
     When I fill in 'password' with 'password'
     And I fill in 'password_confirmation' with 'pasword'
     And I click 'Submit'
-    Then I should see "password_confirmation doesn't match password"
+    Then I should see "password confirmation doesn't match Password"
 
   Scenario: When email is taken I get error message
     When I fill in 'email' with 'hanna@mail.se'
-    And I fill in 'First name' with 'John'
+    And I fill in 'first_name' with 'John'
     And I fill in 'last_name' with 'Doe'
     And I fill in 'password' with 'password'
     And I fill in 'password_confirmation' with 'password'
