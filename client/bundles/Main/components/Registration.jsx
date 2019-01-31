@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Redirect, withRouter } from "react-router-dom";
 import ReactOnRails from "react-on-rails";
 import RegistrationForm from "./RegistrationForm";
 
@@ -20,17 +19,11 @@ export class Registration extends Component {
 		};
 		this.onChange = this.onChange.bind(this);
 		this.onSubmit = this.onSubmit.bind(this);
-		this.onSignUp = this.onSignUp.bind(this);
 		this.onRoleClick = this.onRoleClick.bind(this);
 	}
 
-	onSignUp() {
-		this.props.history.push("/");
-	}
 	onSubmit() {
 		event.preventDefault();
-		// let submited = false
-		let self = this.props;
 		const csrfToken = ReactOnRails.authenticityToken();
 		let registrationForm = document.getElementById("Registration-form");
 		const data = new FormData(registrationForm);
@@ -46,8 +39,7 @@ export class Registration extends Component {
 		axios
 			.post("/users", data, config)
 			.then(response => {
-				// this.submited = true;
-				this.props.history.push("/");
+				document.location.href = "/";
 			})
 			.catch(function(error) {
 				console.log(error);
@@ -68,7 +60,6 @@ export class Registration extends Component {
 	}
 	onRoleClick(){
 		event.preventDefault();
-		console.log(event.target.value)
 		this.setState(prevState => ({
 		roleChoiceStatus: !prevState.roleChoiceStatus,
 		role: event.target.value,
@@ -112,4 +103,4 @@ export class Registration extends Component {
 	}
 }
 
-export default withRouter(Registration);
+export default Registration;
