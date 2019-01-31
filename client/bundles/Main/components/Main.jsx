@@ -23,24 +23,41 @@ export default class Main extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className='main_container'>
+				<div className='header'>
+					<img src="./assets/logo.png" id="logo" alt="logo" />
+					<p id="title">Tribal</p>
+				</div>
+				
+				<div className='content'>
 				<NavLink to='/register'>
 					Sign up
 				</NavLink>
 				<h1>Hello, {this.state.user ? this.state.user.first_name : 'Stranger'}!</h1>
-				<div id='available'>
-					<h1>Available sessions</h1>
-					<AllSessions sessionlist={this.state.available_sessions} />
-					<br />
+					<div id='available'>
+						<h1>Available sessions</h1>
+						<div className='session_wrapper'>
+							<AllSessions sessionlist={this.state.available_sessions} />
+						</div>
+						<br />
+					</div>
+					<div id='booked'>
+						<h1>Booked sessions</h1>
+						<div className='session_wrapper'>
+							<AllSessions sessionlist={this.state.booked_sessions} />
+						</div>
+						<br />
+					</div>
+					<div id='full'>
+						<h1>Full sessions</h1>
+						<div className='session_wrapper'>
+							<AllSessions sessionlist={this.state.full_sessions} />
+						</div>
+					</div>
 				</div>
-				<div id='booked'>
-					<h1>Booked sessions</h1>
-					<AllSessions sessionlist={this.state.booked_sessions} />
-					<br />
-				</div>
-				<div id='full'>
-					<h1>Full sessions</h1>
-					<AllSessions sessionlist={this.state.full_sessions} />
+
+				<div className='footer'>
+					<p>FOOTER</p>
 				</div>
 			</div>
 		);
