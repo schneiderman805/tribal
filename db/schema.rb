@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_30_183841) do
+ActiveRecord::Schema.define(version: 2019_01_31_090257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,12 @@ ActiveRecord::Schema.define(version: 2019_01_30_183841) do
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_table_id"
+    t.bigint "{:foreign_key=>true}_id"
+    t.bigint "price_tables_id"
+    t.index ["price_tables_id"], name: "index_sessions_on_price_tables_id"
+    t.index ["{:foreign_key=>true}_id"], name: "index_sessions_on_{:foreign_key=>true}_id"
   end
 
+  add_foreign_key "sessions", "price_tables", column: "price_tables_id"
 end
