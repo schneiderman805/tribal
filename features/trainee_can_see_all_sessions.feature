@@ -14,12 +14,9 @@ Feature: Trainee can see all sessions
 
 	Scenario: Trainee can view all sessions on the Home Page
 		Given I visit the site
-		Then I should see 'Crossfit' in 'available'
+		Then I should see 'CROSSFIT' in 'available'
 		And I should see '01/02/2019, 16:00:00' in 'available'
-		And I should see '01/02/2019, 16:30:00' in 'available'
-		Then I should see 'Yoga' in 'booked'
+		Then I should see 'YOGA' in 'booked'
 		And I should see '01/02/2019, 20:00:00' in 'booked'
-		And I should see '01/02/2019, 20:30:00' in 'booked'
-		Then I should see 'Body Pump' in 'full'
+		Then I should see 'BODY PUMP' in 'full'
 		And I should see '01/02/2019, 22:00:00' in 'full'
-		And I should see '01/02/2019, 22:30:00' in 'full'
