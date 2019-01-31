@@ -158,3 +158,11 @@ body {
     .button {font-size: 20px;}
     h1 {font-size: 45px;}
 }
+@screen md {
+    #logo { width: 70px }
+    #title { font-size: 50px }
+    .content { margin-top: 100px }
+    .session h1 { font-size: 32px }
+    .session { font-size: 32px }
+    .button { font-size: 26px }
+}
