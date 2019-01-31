@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
 
 export default function RegistrationForm(props) {
 	return (
@@ -49,7 +48,7 @@ export default function RegistrationForm(props) {
 					name="password_confirmation"
 					type="password"
 				/>
-				<input style={{display: 'none'}} id="role" name="role" value={props.role} />
+				<input style={{ display: 'none' }} id="role" name="role" value={props.role} />
 				<button name="Submit" type="submit">
 					Submit
 				</button>

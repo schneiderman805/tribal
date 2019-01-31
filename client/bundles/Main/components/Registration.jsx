@@ -40,20 +40,19 @@ export class Registration extends Component {
 		axios
 			.post("/users", data, config)
 			.then(response => {
-				
+
 				if (response.data.errors) {
-					let errors = Object.entries(response.data.errors).join('\n').replace(/,|_/g,' ');
+					let errors = Object.entries(response.data.errors).join('\n').replace(/,|_/g, ' ');
 					this.setState({
 						formErrors: errors
 					})
-					
-				}else {
+				} else {
 					document.location.href = "/";
 				}
-				
-				
+
+
 			})
-			.catch(function(error) {
+			.catch(function (error) {
 				console.log(error);
 			});
 	}

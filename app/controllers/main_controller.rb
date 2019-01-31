@@ -3,7 +3,6 @@ class MainController < ApplicationController
 
   def index
     if user_signed_in?
-      # binding.pry
       user = current_user
     end
     sessions = Session.all
