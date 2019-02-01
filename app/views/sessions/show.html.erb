@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to new_session_path(:session_id => @session.id), class: "course-btn" do %><i class="fa fa-calendar-plus-o"></i> Book This session<% end %>
 <%= link_to 'Edit', edit_session_path(@session) %> |
 <%= link_to 'Back', sessions_path %>

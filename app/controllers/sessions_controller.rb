@@ -1,25 +1,21 @@
 class SessionsController < ApplicationController
-  before_action :set_session, only: [:show, :edit, :update, :destroy]
-
-  # GET /sessions
+  before_action :set_lesson, only: [:show]
+  
   def index
-    @sessions = Session.all
+    @session = Session.paginate(:page => params[:page], :per_page => 6).order('sort ASC')
   end
 
-  # GET /sessions/1
   def show
+    @others = Lesson.paginate(:page => params[:page], :per_page => 4).order('sort ASC')
   end
 
-  # GET /sessions/new
   def new
     @session = Session.new
   end
 
-  # GET /sessions/1/edit
   def edit
   end
 
-  # POST /sessions
   def create
     @session = Session.new(session_params)
 
@@ -30,7 +26,6 @@ class SessionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /sessions/1
   def update
     if @session.update(session_params)
       redirect_to @session, notice: 'Session was successfully updated.'
@@ -39,19 +34,16 @@ class SessionsController < ApplicationController
     end
   end
 
-  # DELETE /sessions/1
   def destroy
     @session.destroy
     redirect_to sessions_url, notice: 'Session was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_session
       @session = Session.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def session_params
       params.fetch(:session, {})
     end
